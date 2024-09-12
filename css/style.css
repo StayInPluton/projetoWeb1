@@ -1,19 +1,411 @@
-
-body{
-    background-color: #B8C0C3;
+/*---Geral----*/
+body {
+    background-color:#000000;
+    padding-top: 70px;
 }
 
-h3, h4{
+p,
+li,
+tr {
+    color: #82CAE6;
+}
+
+h1,
+h2,
+h3,
+h4 {
     color: #D92631;
 }
 
-#cabecalho{
-    background-color: #ffffff;
-    position: sticky;
-    top: 0%;
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+/*----Cabecalho----*/
+
+#cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #C1C8CB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.logo{
+    transition: background-color 0.3s ease;
+}
+.logo img{
+    width: 100px;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.botaoCabecalho {
+    color: #000000;
+    padding: 20px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.botaoCarrinho {
+    padding: 0;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
+}
+
+.botaoCabecalho:hover, .botaoCarrinho:hover, .logo:hover {
+    background-color: #82CAE6;
+}
+
+.botaoCarrinho img {
+    height: 40px;
+}
+
+
+/*----Formularios----*/
+/*Login*/
+#login {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#login h1 {
+    color: #82cae6;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#login form input {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login form input[type="email"], 
+#login form input[type="password"] {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+#login button {
+    background-color: #82cae6;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login button:hover {
+    background-color: #007bff;
+}
+
+#login a {
+    color: #82cae6;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+#login a:hover {
+    text-decoration: underline;
+}
+/*Cadastro*/
+#cadastro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#cadastro form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #82cae6;
+}
+
+#cadastro legend {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #82cae6;
+}
+
+#cadastro label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #82cae6;
+}
+
+#cadastro .sexo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre as opções */
+    margin-bottom: 15px;
+}
+
+#cadastro input[type="text"],
+#cadastro input[type="email"],
+#cadastro input[type="password"],
+#cadastro textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+}
+
+#cadastro textarea {
+    resize: none;
+}
+
+#cadastro input[type="radio"] {
+    margin-left: 5px;
+}
+
+#cadastro button {
+    background-color: #82cae6;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#cadastro button:hover {
+    background-color: #007bff;
+}
+
+#cadastro a {
+    color: #82cae6;
+    margin-top: 10px;
+    display: inline-block;
+}
+/*Recuperar Senha*/
+#recuperarSenha {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    text-align: center;
+    color: #82cae6;
+}
+
+#recuperarSenha h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#recuperarSenha label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#recuperarSenha input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+}
+
+#recuperarSenha button {
+    background-color: #82cae6;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#recuperarSenha button:hover {
+    background-color: #007bff;
+}
+
+#recuperarSenha a {
+    color: #82cae6;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/*----Tela Principal----*/
+
+/*Produtos na tela principal*/
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#h1TelaPrincipal {
+    text-align: center;
+}
+
+.produto {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+.produto img {
+    max-width: 100%;
+    height: 230px;
+    margin-bottom: 15px;
+}
+
+
+.produto button {
+    background-color: #82CAE6;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto button:hover {
+    background-color: #0056b3;
+}
+
+/*----Pagina dos produtos----*/
+.paginasProdutos {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    max-width: 2000px; 
+    margin: 100px auto;
+    padding: 200px;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+}
+
+.paginasProdutos img {
+    max-width: 400px; 
+    max-height: 600px; 
+    width: auto; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+.informacaoEBotao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    max-width: 100%;
+    
+}
+
+.informacaoEBotao p, 
+.informacaoEBotao h3, 
+.informacaoEBotao h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/*---Sobre---*/
+#paletaImg {
+    width: 30%;
+}
+
+/*carrinho*/
+#carrinho {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #1f1f1f;
+}
+
+caption {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-#paletaImg{
-    width: 30%;
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#carrinho img {
+    width: 300px; 
+    height: 300px; 
+}
+.acao {
+    text-align: center;
+}
+
+button {
+    background-color: #82cae6;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007bff;
 }

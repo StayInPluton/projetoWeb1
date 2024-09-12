@@ -12,46 +12,47 @@
 <body>
     <!--Cabeçalho-->
     <div id="cabecalho">
-    <a class="logo" href="telaPrincipal.html">
-        <img src="img/DISCOOL_logo.png" alt="home" width="180">
-    </a>
-    <a class="botaoCabecalho" href="forms/login.html">
-        Sair
-    </a>
-
-    <a class="botaoCabecalho" href="sobre.html">
-        Sobre
-    </a>
-
-    <a class="botaoCarrinho" href="/shoppingCart.html">
-        <img src="img/shopping-cart.png" alt="Carrinho" width="50">
-    </a>
+        <a class="logo" href="telaPrincipal.html">
+            <img src="img/DISCOOL_logo.png" alt="home">
+        </a>
+        <div class="botoes">
+            <a class="botaoCabecalho" href="forms/login.html">Sair</a>
+            <a class="botaoCabecalho" href="sobre.html">Sobre</a>
+            <a class="botaoCarrinho" href="/shoppingCart.html">
+                <img src="img/shopping-cart.png" alt="Carrinho" width="40">
+            </a>
+        </div>
     </div>
 
     <!--Carrinho-->
-
-    <table border="2">
-        <caption>
-            <h1>Suas compras</h1>
-        </caption>
-        <tr>
-            <th>Discos</th>
-            <th>Valor</th>
-            <th>total</th>
-        </tr>
-        <tr>
-            <td><img src="produtos/coldplay/img/coldplayMusicOftheSpheres.png" alt="" width="100"></td>
-            <td>R$80,00</td>
-            <td rowspan="4">R$160</td>
-        </tr>
-        <tr>
-            <td><img src="produtos/ghost/img/ghostPrequelle.jpg" alt="" width="100"></td>
-            <td>R$80,00</td>
-        </tr>
-    </table>
-    <br>
-    <div>
-        <button onclick="alert('Compra finalizada')">Finalizar compra</button>
+    <div id="carrinho">
+        <table>
+            <caption>
+                <h1>Suas Compras</h1>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Discos</th>
+                    <th>Valor</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="produtos/coldplay/img/coldplayMusicOftheSpheres.png" alt="Coldplay" width="100"></td>
+                    <td>R$80,00</td>
+                    <td rowspan="2">R$160,00</td>
+                </tr>
+                <tr>
+                    <td><img src="produtos/ghost/img/ghostPrequelle.jpg" alt="Ghost" width="100"></td>
+                    <td>R$80,00</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="acao">
+            <button onclick="alert('Compra finalizada')">Finalizar Compra</button>
+        </div>
     </div>
 </body>
 
