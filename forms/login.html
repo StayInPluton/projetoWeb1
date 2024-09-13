@@ -7,25 +7,42 @@
     <title>Login</title>
 </head>
 <body class="login">
-   <div id="login">
-    <div>
-        <img src="" alt=""> 
+    <div id="login">
+        <div>
+            <img src="../img/DISCOOL_logoOld.png" alt="Logo" width="300">
+        </div>
+        <h1>Login</h1>
+        <form id="formLogin">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <br><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <br>
+        <a href="novoUsuario.html">Novo usuário</a>
+        <a href="recuperarSenha.html">Esqueceu a senha</a>
     </div>
-    <h1 >Login</h1>
-    <form action="">
-        <input type="email" name="" id="email" placeholder="Email">
-        <input type="password" name="" id="" placeholder="Senha">
-    </form>
-    <br>
-    <a href="../telaPrincipal.html"><button>entrar</button></a>
-    <br>
-    <a href="novoUsuario.html">
-        Novo usuario
-    </a>
-    <a href="recuperarSenha.html">
-        Esqueceu a senha
-    </a>
-</div>
-    
+
+  <script>
+    document.getElementById("formLogin").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        
+        let email = document.getElementById("email").value;
+        let senha = document.getElementById("senha").value;
+
+      
+        if (!email || !email.match(/^\S+@\S+\.\S+$/)) {
+            alert("Por favor, insira um e-mail válido.");
+            return;
+        }
+
+        if (!senha.trim()) {
+            alert("Por favor, insira sua senha.");
+            return;
+        }
+
+        window.location.href = '../telaPrincipal.html';
+    });
+</script>
 </body>
 </html>

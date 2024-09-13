@@ -479,14 +479,14 @@ button:hover {
 #sobre {
     background-color: #1f1f1f;
     padding: 20px;
-    color: #82cae6; /* Ajuste a cor do texto para combinar com a paleta */
+    color: #82cae6;
 }
 
 #sobre ul {
     margin: 10px 0;
     padding: 0;
     list-style-type: disc;
-    color: #82cae6; /* Ajuste a cor do texto para combinar com a paleta */
+    color: #82cae6; 
 }
 
 #sobre ul li {
@@ -494,7 +494,7 @@ button:hover {
 }
 
 #sobre a {
-    color: #82cae6; /* Cor dos links */
+    color: #82cae6; 
     text-decoration: none;
 }
 

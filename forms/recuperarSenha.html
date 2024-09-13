@@ -10,15 +10,45 @@
 <body>
     <div id="recuperarSenha">
         <h1>Recuperar Senha</h1>
-        <form action="">
+        <form id="formRecuperarSenha">
             <label for="email-recuperacao">Digite o seu Email:</label>
             <br>
-            <input type="email" id="email-recuperacao" placeholder="email@example.com">
+            <input type="email" id="emailRecuperacao" placeholder="email@example.com">
+            <div id="emailRecuperacaoError" class="error-message"></div>
             <br><br>
-            <button type="submit" onclick="alert('Email enviado com sucesso')">Enviar</button>
+            <button type="submit">Enviar</button>
         </form>
         <a href="login.html">Voltar</a>
     </div>
+    
+    <script>
+        document.getElementById('formRecuperarSenha').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            document.getElementById('emailRecuperacaoError').textContent = '';
+    
+            
+            const email = document.getElementById('emailRecuperacao').value.trim();
+    
+            let valid = true;
+    
+            if (!email) {
+                document.getElementById('emailRecuperacaoError').textContent = 'Por favor, informe seu e-mail.';
+                valid = false;
+            } else {
+                const emailPattern = /^\S+@\S+\.\S+$/;
+                if (!email.match(emailPattern)) {
+                    document.getElementById('emailRecuperacaoError').textContent = 'O e-mail fornecido não é válido.';
+                    valid = false;
+                }
+            }
+    
+            if (valid) {
+                alert('Email enviado com sucesso');
+                window.location.href = 'login.html'
+            }
+        });
+    </script>
     
 </body>
 </html>

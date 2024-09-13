@@ -11,42 +11,102 @@
 
 <body >
     <div id="cadastro">
-    <h1>Cadastro</h1>
-    
-        <form action="">
+        <h1>Cadastro</h1>
+        <form id="formCadastro">
             <fieldset>
                 <legend>Informações pessoais</legend>
+                
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Seu nome completo">
+                <div id="nomeError" class="error-message"></div>
     
                 <label for="sexo">Sexo:</label>
                 <div class="sexo-container">
                     <label for="mascu">Masculino</label>
-                    <input type="radio" name="sexo" id="mascu">
+                    <input type="radio" name="sexo" id="mascu" value="masculino">
                     <label for="fem">Feminino</label>
-                    <input type="radio" name="sexo" id="fem">
+                    <input type="radio" name="sexo" id="fem" value="feminino">
                     <label for="nInforma">Prefiro não informar</label>
-                    <input type="radio" name="sexo" id="nInforma">
+                    <input type="radio" name="sexo" id="nInforma" value="nao-informar">
                 </div>
+                <div id="sexoError" class="error-message"></div>
     
                 <label for="obs">Observações</label>
                 <textarea name="obs" id="obs" cols="30" rows="10"></textarea>
     
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="email@email.com">
+                <div id="emailError" class="error-message"></div>
     
                 <label for="senha">Senha</label>
                 <input type="password" name="senha" id="senha">
+                <div id="senhaError" class="error-message"></div>
     
                 <label for="confSenha">Confirmar senha</label>
                 <input type="password" name="confSenha" id="confSenha">
+                <div id="confSenhaError" class="error-message"></div>
     
-                <button type="submit" onclick="alert('Cadastrado com sucesso')">Cadastrar</button>
+                <button type="submit">Cadastrar</button>
                 <button type="reset">Apagar</button>
             </fieldset>
         </form>
         <a href="login.html" class="Voltar">Voltar</a>
     </div>
+
+    <script>
+        document.getElementById('formCadastro').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+    
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value;
+            const confSenha = document.getElementById('confSenha').value;
+            const sexo = document.querySelector('input[name="sexo"]:checked');
+    
+            let valid = true;
+    
+            
+            if (!nome) {
+                document.getElementById('nomeError').textContent = 'Por favor, informe seu nome.';
+                valid = false;
+            }
+    
+            if (!sexo) {
+                document.getElementById('sexoError').textContent = 'Por favor, selecione seu sexo.';
+                valid = false;
+            }
+    
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Por favor, informe seu e-mail.';
+                valid = false;
+            } else {
+                const emailPattern = /^\S+@\S+\.\S+$/;
+                if (!email.match(emailPattern)) {
+                    document.getElementById('emailError').textContent = 'O e-mail fornecido não é válido.';
+                    valid = false;
+                }
+            }
+    
+            if (!senha) {
+                document.getElementById('senhaError').textContent = 'Por favor, informe sua senha.';
+                valid = false;
+            }
+    
+            if (senha !== confSenha) {
+                document.getElementById('confSenhaError').textContent = 'A senha e a confirmação de senha não coincidem.';
+                valid = false;
+            }
+    
+            if (valid) {
+                alert('Cadastrado com sucesso');
+                 window.location.href = "login.html"
+            }
+        });
+    </script>
+    
+    
 </body>
 
 </html>
