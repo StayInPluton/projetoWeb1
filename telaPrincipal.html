@@ -25,14 +25,14 @@
 
     <!--Conteudo do site-->
     <h1 id="h1TelaPrincipal">Discos disponíveis:</h1>
-    <div class="container-produtos">
+    <div id="chicoBuarque" class="container-produtos">
         <div class="produto">
             <a href="produtos/chicoBuarque/chicoBuarque.html">
                 <img src="produtos/chicoBuarque/img/chicoBuarqueConstrucao.jpg" alt="ver produto">
                 <br>
                 <h3>Chico Buarque - Construção</h3>
             </a>
-            <p>Por <strong>R$80,00</strong>
+            <p >Por <strong class="precoAtual">R$8,00</strong>
                 <br>ou<br>
                 10x de <strong>R$8,00</strong>
             </p>
@@ -100,6 +100,16 @@
             <a href="produtos/slayer/slayer.html"><button>Comprar</button></a>
         </div>
     </div>
+    <div>
+        <a href="/produtos/chicoBuarque/chicoBuarque.html" id="promocao" class="promo">
+            <img src="produtos/chicoBuarque/img/chicoBuarqueConstrucao.jpg" alt="Produto em promoção" />
+            <div class="infoPromocao">
+                <p>De: <span class="precoAntigo">R$80,00</span></p>
+                <p>Por: <span class="precoNovo">R$8,00</span></p>
+            </div>
+            </a>
+    </div>
+    
     <br>
 
 </body>
